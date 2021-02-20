@@ -59,6 +59,33 @@ func (list *Listat) Imprimir() {
 	}
 
 }
+func (list *Listat) ImprimirGraph() string {
+	var cadena_aux string = ""
+	if list.primero != nil {
+		if list.primero == list.ultimo {
+			cadena_aux = "\" " + list.primero.Nombre + "\\n Contacto: " + list.primero.Contacto + "\" "
+		} else {
+			aux := list.primero
+			for aux != nil {
+				cadena_aux = cadena_aux + "\" " + aux.Nombre + "\\n Contacto: " + aux.Contacto + "\"-> "
+
+				aux = aux.siguiente
+			}
+
+			aux = list.ultimo.anterior
+			for aux != list.primero {
+				cadena_aux = cadena_aux + "\" " + aux.Nombre + "\\n Contacto: " + aux.Contacto + "\" ->"
+
+				aux = aux.anterior
+			}
+			cadena_aux = cadena_aux + "\" " + aux.Nombre + "\\n Contacto: " + aux.Contacto + "\"; "
+
+		}
+
+	}
+	//fmt.Println(cadena_aux)
+	return cadena_aux
+}
 func GetAscii(nombre_ string) int {
 	longitud := len(nombre_)
 	valor := 0
@@ -85,7 +112,6 @@ func (list *Listat) Eliminar(nombre_ string) {
 		}
 	} else if list.ultimo.Nombre == nombre_ {
 		// hacemos que el ultimo nodo sea el penultimo
-		fmt.Println("aqui esta juanito??", list.ultimo.Nombre)
 		list.ultimo = list.ultimo.anterior
 		list.ultimo.siguiente = nil
 		list.tamaño--

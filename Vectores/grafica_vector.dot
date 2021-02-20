@@ -1,0 +1,41 @@
+Digraph G{
+rankdir = TB;
+ node [shape = record];
+ 
+ 
+ label = "Linealizacion";
+ 
+ // creamos el vector  
+ Vector [label="  <A0>Indice: A \n Departamento: Electrónicos para autos\n Calificacion: 1|<A1>Indice: A \n Departamento: Electrónicos para autos\n Calificacion: 2|<A2>Indice: A \n Departamento: Electrónicos para autos\n Calificacion: 3|<A3>Indice: A \n Departamento: Electrónicos para autos\n Calificacion: 4|<A4>Indice: A \n Departamento: Electrónicos para autos\n Calificacion: 5|
+<A5>Indice: A \n Departamento: Juegos para Android\n Calificacion: 1|<A6>Indice: A \n Departamento: Juegos para Android\n Calificacion: 2|<A7>Indice: A \n Departamento: Juegos para Android\n Calificacion: 3|<A8>Indice: A \n Departamento: Juegos para Android\n Calificacion: 4|<A9>Indice: A \n Departamento: Juegos para Android\n Calificacion: 5|
+<A10>Indice: A \n Departamento: Podcast\n Calificacion: 1|<A11>Indice: A \n Departamento: Podcast\n Calificacion: 2|<A12>Indice: A \n Departamento: Podcast\n Calificacion: 3|<A13>Indice: A \n Departamento: Podcast\n Calificacion: 4|<A14>Indice: A \n Departamento: Podcast\n Calificacion: 5|
+<A15>Indice: A \n Departamento: Herramientas\n Calificacion: 1|<A16>Indice: A \n Departamento: Herramientas\n Calificacion: 2|<A17>Indice: A \n Departamento: Herramientas\n Calificacion: 3|<A18>Indice: A \n Departamento: Herramientas\n Calificacion: 4|<A19>Indice: A \n Departamento: Herramientas\n Calificacion: 5|
+<B20>Indice: B \n Departamento: Electrónicos para autos\n Calificacion: 1|<B21>Indice: B \n Departamento: Electrónicos para autos\n Calificacion: 2|<B22>Indice: B \n Departamento: Electrónicos para autos\n Calificacion: 3|<B23>Indice: B \n Departamento: Electrónicos para autos\n Calificacion: 4|<B24>Indice: B \n Departamento: Electrónicos para autos\n Calificacion: 5|
+<B25>Indice: B \n Departamento: Juegos para Android\n Calificacion: 1|<B26>Indice: B \n Departamento: Juegos para Android\n Calificacion: 2|<B27>Indice: B \n Departamento: Juegos para Android\n Calificacion: 3|<B28>Indice: B \n Departamento: Juegos para Android\n Calificacion: 4|<B29>Indice: B \n Departamento: Juegos para Android\n Calificacion: 5|
+<B30>Indice: B \n Departamento: Podcast\n Calificacion: 1|<B31>Indice: B \n Departamento: Podcast\n Calificacion: 2|<B32>Indice: B \n Departamento: Podcast\n Calificacion: 3|<B33>Indice: B \n Departamento: Podcast\n Calificacion: 4|<B34>Indice: B \n Departamento: Podcast\n Calificacion: 5|
+<B35>Indice: B \n Departamento: Herramientas\n Calificacion: 1|<B36>Indice: B \n Departamento: Herramientas\n Calificacion: 2|<B37>Indice: B \n Departamento: Herramientas\n Calificacion: 3|<B38>Indice: B \n Departamento: Herramientas\n Calificacion: 4|<B39>Indice: B \n Departamento: Herramientas\n Calificacion: 5|
+<C40>Indice: C \n Departamento: Electrónicos para autos\n Calificacion: 1|<C41>Indice: C \n Departamento: Electrónicos para autos\n Calificacion: 2|<C42>Indice: C \n Departamento: Electrónicos para autos\n Calificacion: 3|<C43>Indice: C \n Departamento: Electrónicos para autos\n Calificacion: 4|<C44>Indice: C \n Departamento: Electrónicos para autos\n Calificacion: 5|
+<C45>Indice: C \n Departamento: Juegos para Android\n Calificacion: 1|<C46>Indice: C \n Departamento: Juegos para Android\n Calificacion: 2|<C47>Indice: C \n Departamento: Juegos para Android\n Calificacion: 3|<C48>Indice: C \n Departamento: Juegos para Android\n Calificacion: 4|<C49>Indice: C \n Departamento: Juegos para Android\n Calificacion: 5|
+<C50>Indice: C \n Departamento: Podcast\n Calificacion: 1|<C51>Indice: C \n Departamento: Podcast\n Calificacion: 2|<C52>Indice: C \n Departamento: Podcast\n Calificacion: 3|<C53>Indice: C \n Departamento: Podcast\n Calificacion: 4|<C54>Indice: C \n Departamento: Podcast\n Calificacion: 5|
+<C55>Indice: C \n Departamento: Herramientas\n Calificacion: 1|<C56>Indice: C \n Departamento: Herramientas\n Calificacion: 2|<C57>Indice: C \n Departamento: Herramientas\n Calificacion: 3|<C58>Indice: C \n Departamento: Herramientas\n Calificacion: 4|<C59>Indice: C \n Departamento: Herramientas\n Calificacion: 5|
+ " ]; 
+Vector:A1->" Alvarado y Piña\n Contacto: 991.850.635" 
+Vector:A7->" Adorno y Camacho\n Contacto: 985298151" 
+Vector:A14->" Alcala Mora Hermanos\n Contacto: 980-827-817" 
+Vector:A15->" Adame Delrío S.A.\n Contacto: 909845637" 
+Vector:A17->" Anguiano Escalante e Hijos\n Contacto: 987-076-119" 
+Vector:A18->" Almaraz Espinal S.L.\n Contacto: 943518867" 
+Vector:B22->" Balderas y Agosto\n Contacto: 979 824 130" 
+Vector:B24->" Badillo Ramírez e Hijos\n Contacto: 916-817-258"-> " Bueno Santacruz e Hijos\n Contacto: 989-167-262"-> " Badillo Ramírez e Hijos\n Contacto: 916-817-258"; 
+Vector:B26->" Bermúdez y Ceballos\n Contacto: 942 004 668"-> " Bermúdez Arreola S.A.\n Contacto: 930830885"-> " Bermúdez y Ceballos\n Contacto: 942 004 668"; 
+Vector:B31->" Benavídez y Pantoja\n Contacto: 985 363 456" 
+Vector:B32->" Bermúdez S.A.\n Contacto: 924 718 993" 
+Vector:B39->" Barrera Hermanos\n Contacto: 963 404 333"-> " Batista Vélez e Hijos\n Contacto: 984 736 539"-> " Barrera Hermanos\n Contacto: 963 404 333"; 
+Vector:C42->" Coronado e Hijos\n Contacto: 995 562 913" 
+Vector:C46->" Cortés e Hijos\n Contacto: 949 915 891" 
+Vector:C47->" Cedillo Toro Hermanos\n Contacto: 961308585" 
+Vector:C49->" Cuellar y Palomo\n Contacto: 916.992.110" 
+Vector:C50->" Carreón Hermanos\n Contacto: 938.458.084"-> " Concepción y Valle\n Contacto: 965553098"-> " Carreón Hermanos\n Contacto: 938.458.084"; 
+Vector:C51->" Calderón e Hijos\n Contacto: 915 327 452" 
+Vector:C56->" Casárez Pacheco Hermanos\n Contacto: 929-971-783"-> " Carrasquillo S.A.\n Contacto: 956.519.297"-> " Casárez Pacheco Hermanos\n Contacto: 929-971-783"; 
+}

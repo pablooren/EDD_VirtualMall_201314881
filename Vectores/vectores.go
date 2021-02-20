@@ -2,38 +2,121 @@ package vectores
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"strconv"
 
 	"../ListaTienda"
 )
 
 type Clasificacion struct {
-	clasi   int
-	tiendas *ListaTienda.Listat
+	Clasi   int
+	Tiendas *ListaTienda.Listat
+}
+type Linealizar struct {
+	indice, depto string
+	clasi         int
+	list          *ListaTienda.Listat
+}
+type VectorL struct {
+	nodo []Linealizar
 }
 type Departamento struct {
-	clasi  [100]Clasificacion
-	nombre string
+	Clasi  []Clasificacion
+	Nombre string
 }
 type Indice struct {
-	letra string
-	depto [100]Departamento
+	Letra string
+	Depto []Departamento
 }
 type Matriz struct {
-	indice [100]Indice
+	Indice []Indice
 }
 
-func Imprimir() {
-	ls := ListaTienda.NuevaLista()
-	ls.Insertar("Juan", "sexo", "123", 1)
-	ls.Insertar("Juana", "sexo", "123", 2)
-	ls.Insertar("Juanito", "sexo", "123", 6)
-	ls.Insertar("Juano", "sexo", "123", 3)
-	ls.Insertar("Juanita", "sexo", "123", 4)
-	ls.Insertar("Juanote", "sexo", "123", 5)
-	ls.Ordenar()
-	ls.Imprimir()
-	fmt.Println("eliminamos a Juanito")
-	ls.Eliminar("Juanito")
-	ls.Imprimir()
+func GetMatriz() Matriz {
+	var nuevo Matriz
+	return nuevo
+}
+
+func Linealizacion(matriz Matriz) {
+	var vector VectorL
+	tamaño := len(matriz.Indice) * len(matriz.Indice[0].Depto) * 5
+	vector.nodo = make([]Linealizar, tamaño)
+
+	contador := 0
+	// vamos a recorrer los indices
+	for i := 0; i < len(matriz.Indice); i++ {
+		for j := 0; j < len(matriz.Indice[i].Depto); j++ {
+			for k := 0; k < 5; k++ {
+				vector.nodo[contador].indice = matriz.Indice[i].Letra
+				vector.nodo[contador].depto = matriz.Indice[i].Depto[j].Nombre
+				vector.nodo[contador].clasi = matriz.Indice[i].Depto[j].Clasi[k].Clasi
+				vector.nodo[contador].list = matriz.Indice[i].Depto[j].Clasi[k].Tiendas
+				contador++
+
+			}
+		}
+	}
+
+	//for a := 0; a < len(vector.nodo); a++ {
+	//	fmt.Println(vector.nodo[a].indice, ": ", vector.nodo[a].depto, ": ", vector.nodo[a].clasi)
+	//	vector.nodo[a].list.Imprimir()
+
+	//}
+	Graficar(vector)
+	// toda la logica para linealizar
+}
+func GetFile(path string) *os.File {
+	file, err := os.OpenFile(path, os.O_RDWR, 0775)
+	if err != nil {
+		log.Fatal(err)
+
+	}
+	return file
+}
+
+func Graficar(vector VectorL) {
+	os.Create("vectores/grafica_vector.dot")
+	graphdot := GetFile("vectores/grafica_vector.dot")
+
+	fmt.Fprintf(graphdot, "Digraph G{\n")
+	fmt.Fprintf(graphdot, "rankdir = TB;\n ")
+	fmt.Fprintf(graphdot, "node [shape = record];\n ")
+	fmt.Fprintf(graphdot, "\n ")
+	fmt.Fprintf(graphdot, "\n ")
+	fmt.Fprintf(graphdot, "label = \"Linealizacion\";\n ")
+	fmt.Fprintf(graphdot, "\n ")
+	fmt.Fprintf(graphdot, "// creamos el vector  \n ")
+	var text_aux string = ""
+	fmt.Fprintf(graphdot, "Vector [label=\"  ")
+	for a := 0; a < len(vector.nodo); a++ {
+		text_aux = "<" + vector.nodo[a].indice + strconv.Itoa(a) + ">" + "Indice: " + vector.nodo[a].indice + " \\n Departamento: " + vector.nodo[a].depto + "\\n Calificacion: " + strconv.Itoa(vector.nodo[a].clasi) + "|"
+
+		fmt.Fprintf(graphdot, text_aux)
+		if (a+1)%5 == 0 {
+			fmt.Fprintf(graphdot, "\n")
+
+		}
+
+	}
+
+	fmt.Fprintf(graphdot, " \" ]; \n")
+	for a := 0; a < len(vector.nodo); a++ {
+		text_aux = vector.nodo[a].list.ImprimirGraph()
+		if text_aux != "" {
+			pos := "Vector:" + vector.nodo[a].indice + strconv.Itoa(a) + "->"
+
+			fmt.Fprintf(graphdot, pos)
+			fmt.Fprint(graphdot, text_aux)
+			fmt.Fprintf(graphdot, "\n")
+
+		}
+
+	}
+	// aqui van los enlaces con los nodos
+	fmt.Fprintf(graphdot, "}")
+	graphdot.Close()
+	exec.Command("C:\\Program Files\\Graphviz\\bin\\dot", "-Tpng", "Vectores/grafica_vector.dot", "-o", "Vectores/grafica.png").Output()
 
 }
