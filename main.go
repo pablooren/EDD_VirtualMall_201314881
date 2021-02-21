@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strconv"
 
 	"./ListaTienda"
 	vectores "./Vectores"
@@ -15,6 +16,7 @@ import (
 
 var dat Datos
 var matriz vectores.Matriz
+var vector vectores.VectorL
 
 func main() {
 
@@ -30,11 +32,48 @@ func request() {
 	myrouter.HandleFunc("/cargartienda", cargartienda).Methods("POST")
 	myrouter.HandleFunc("/Eliminar", Eliminar).Methods("POST")
 	myrouter.HandleFunc("/getArreglo", Graficar).Methods("GET")
+	myrouter.HandleFunc("/id", id).Methods("GET")
+	myrouter.HandleFunc("/guardar", GuardarDatos).Methods("GET")
+	myrouter.HandleFunc("/TiendaEspecifica", GetTiendaE).Methods("POST")
 	log.Fatal(http.ListenAndServe(":3000", myrouter))
 
 }
+func GetTiendaE(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	body, _ := ioutil.ReadAll(r.Body)
+	var elim Del
+	json.Unmarshal(body, &elim)
+	resultado := vectores.BuscarT(elim.Categoria, elim.Nombre, elim.Calificacion, vector)
+	json.NewEncoder(w).Encode(resultado)
+
+}
+
+func GuardarDatos(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(matriz)
+
+}
 func Graficar(w http.ResponseWriter, r *http.Request) {
+	vector = vectores.Linealizacion(matriz)
+	vectores.Graficar(vector)
 	fmt.Fprintln(w, "La grafica ya esta dibujada")
+
+}
+func id(w http.ResponseWriter, r *http.Request) {
+	var resultado ListaTienda.ResL
+	vars := r.URL.Query()
+	valor := vars["id"]
+	strinvalor := valor[0]
+
+	valorr, error := strconv.ParseInt(strinvalor, 10, 64)
+	fmt.Println("Esto es id :", valorr)
+	if error != nil {
+	}
+	resultado = vectores.BusquedaL(int(valorr), vector)
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(resultado)
 
 }
 func Eliminar(w http.ResponseWriter, r *http.Request) {
@@ -42,8 +81,27 @@ func Eliminar(w http.ResponseWriter, r *http.Request) {
 	body, _ := ioutil.ReadAll(r.Body)
 	var elim Del
 	json.Unmarshal(body, &elim)
+	// aqui toda la logica para eliminar desde el vector linealizado
+	//Verificamos que la letra de la tienda sea la correcta
+	for a := 0; a < len(matriz.Indice); a++ {
+		if matriz.Indice[a].Letra == string(elim.Nombre[0]) {
+			// si si es que la letra si existe por lo que puede estar dentro de un departamento
+			for b := 0; b < len(matriz.Indice[a].Depto); b++ {
+				if matriz.Indice[a].Depto[b].Nombre == elim.Categoria {
+					// si si pueda que exista una tienda con ese nombre
+					aux := matriz.Indice[a].Depto[b].Clasi[elim.Calificacion-1].Tiendas.Eliminar(elim.Nombre)
+					fmt.Fprintf(w, aux)
 
-	//fmt.Println(elim.Nombre, " ", elim.Categoria, " ", elim.Calificacion)
+				} else {
+					//	fmt.Fprintf(w, "La tienda no existe 1")
+				}
+			}
+
+		} else {
+			//	fmt.Fprintf(w, "La tienda no existe 2")
+		}
+	}
+
 	w.Header().Set("Content-Type", "application/json")
 }
 
@@ -59,7 +117,7 @@ func cargartienda(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(body, &dat)
 	//	fmt.Println(dat.Datos[0].Indice)
 	Ingresar(dat)
-	vectores.Linealizacion(matriz)
+	vector = vectores.Linealizacion(matriz)
 
 	// ahora que tenemos los datos en json vamos a guardarlos en nuestras estructuras
 	//fmt.Println("estos indies: ", ma.Indice[0].)

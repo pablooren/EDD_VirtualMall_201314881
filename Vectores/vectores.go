@@ -39,7 +39,7 @@ func GetMatriz() Matriz {
 	return nuevo
 }
 
-func Linealizacion(matriz Matriz) {
+func Linealizacion(matriz Matriz) VectorL {
 	var vector VectorL
 	tamaño := len(matriz.Indice) * len(matriz.Indice[0].Depto) * 5
 	vector.nodo = make([]Linealizar, tamaño)
@@ -64,8 +64,9 @@ func Linealizacion(matriz Matriz) {
 	//	vector.nodo[a].list.Imprimir()
 
 	//}
-	Graficar(vector)
+	//	Graficar(vector)
 	// toda la logica para linealizar
+	return vector
 }
 func GetFile(path string) *os.File {
 	file, err := os.OpenFile(path, os.O_RDWR, 0775)
@@ -119,4 +120,39 @@ func Graficar(vector VectorL) {
 	graphdot.Close()
 	exec.Command("C:\\Program Files\\Graphviz\\bin\\dot", "-Tpng", "Vectores/grafica_vector.dot", "-o", "Vectores/grafica.png").Output()
 
+}
+func BusquedaL(posicion_ int, vector VectorL) ListaTienda.ResL {
+
+	//fmt.Println("esto es:", vector.nodo[24].list.BuscarL())
+
+	return vector.nodo[24].list.BuscarL()
+}
+func BuscarT(departamento_ string, nombre_ string, calificacion_ int, vector VectorL) NodoT {
+	var aux NodoT
+	for a := 0; a < len(vector.nodo); a++ {
+		if string(nombre_[0]) == vector.nodo[a].indice {
+			//quiere decir que si existe el indice con la tienda
+			if departamento_ == vector.nodo[a].depto {
+				//quiere decir que el departamento si existe
+				if calificacion_ == vector.nodo[a].clasi {
+					aux2 := vector.nodo[a].list.BuscarL()
+					for c := 0; c < len(aux2.Datos); c++ {
+						if aux2.Datos[c].Nombre == nombre_ {
+							aux.nombre = aux2.Datos[c].Nombre
+							aux.descripcion = aux2.Datos[c].Descripcion
+							aux.contacto = aux2.Datos[c].Contacto
+							aux.calificacion = vector.nodo[a].clasi
+						}
+					}
+
+				}
+			}
+		}
+	}
+	return aux
+}
+
+type NodoT struct {
+	nombre, descripcion, contacto string
+	calificacion                  int
 }

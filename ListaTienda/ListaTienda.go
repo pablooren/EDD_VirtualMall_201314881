@@ -97,17 +97,19 @@ func GetAscii(nombre_ string) int {
 	return valor
 
 }
-func (list *Listat) Eliminar(nombre_ string) {
+func (list *Listat) Eliminar(nombre_ string) string {
 	if list.primero.Nombre == nombre_ {
 		// si vamos a eliminar al primero de la lista verificamos si hay mas nodos
 		if list.tamaño == 1 {
 			list.primero = nil
 			list.ultimo = nil
 			list.tamaño--
+			return "eliminamos la tienda"
 		} else {
 			//eliminamos el primero de la lista y colocamos al siguien como nuevo inicio
 			list.primero = list.primero.siguiente
 			list.tamaño--
+			return "Eliminamos la tienda"
 
 		}
 	} else if list.ultimo.Nombre == nombre_ {
@@ -115,6 +117,7 @@ func (list *Listat) Eliminar(nombre_ string) {
 		list.ultimo = list.ultimo.anterior
 		list.ultimo.siguiente = nil
 		list.tamaño--
+		return "eliminamos la tienda"
 
 	} else {
 		// ahora buscamos si el nodo esta en medio de nuestra lista
@@ -125,12 +128,14 @@ func (list *Listat) Eliminar(nombre_ string) {
 				aux.anterior.siguiente = aux.siguiente
 				aux.siguiente.anterior = aux.anterior
 				list.tamaño--
+				return "Eliminamos la tienda"
 			} // fin if
 
 			aux = aux.siguiente
 
 		} // fin for
 	} // fin if anidado
+	return "La tienda no existe 3"
 }
 
 func (list *Listat) Ordenar() {
@@ -164,4 +169,30 @@ func (list *Listat) Ordenar() {
 
 	} // fin del for j
 
+}
+func (list *Listat) BuscarL() ResL {
+	aux := list.primero
+	var resul ResL
+	cont := 0
+	resul.Datos = make([]DatoL, list.tamaño)
+	for aux != nil {
+		resul.Datos[cont].Nombre = aux.Nombre
+		resul.Datos[cont].Descripcion = aux.Descripcion
+		resul.Datos[cont].Contacto = aux.Contacto
+		cont++
+		aux = aux.siguiente
+	}
+
+	return resul
+
+	// aqui lo dejamos, no devuelve nada
+}
+
+type DatoL struct {
+	Nombre      string
+	Descripcion string
+	Contacto    string
+}
+type ResL struct {
+	Datos []DatoL
 }
