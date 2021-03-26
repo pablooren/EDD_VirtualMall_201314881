@@ -149,7 +149,6 @@ func Ingresar(datos Datos) {
 				for z := 0; z < 5; z++ {
 					if datos.Datos[a].Departamentos[b].Tiendas[c].Calificacion == matriz.Indice[a].Depto[b].Clasi[z].Clasi {
 						aux := datos.Datos[a].Departamentos[b].Tiendas[c]
-
 						matriz.Indice[a].Depto[b].Clasi[z].Tiendas.Insertar(aux.Nombre, aux.Descripcion, aux.Contacto, aux.Calificacion)
 
 					}

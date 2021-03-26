@@ -53,6 +53,8 @@ func Linealizacion(matriz Matriz) VectorL {
 				vector.nodo[contador].depto = matriz.Indice[i].Depto[j].Nombre
 				vector.nodo[contador].clasi = matriz.Indice[i].Depto[j].Clasi[k].Clasi
 				vector.nodo[contador].list = matriz.Indice[i].Depto[j].Clasi[k].Tiendas
+				vector.nodo[contador].list.Ordenar()
+
 				contador++
 
 			}
@@ -118,14 +120,14 @@ func Graficar(vector VectorL) {
 	// aqui van los enlaces con los nodos
 	fmt.Fprintf(graphdot, "}")
 	graphdot.Close()
-	exec.Command("C:\\Program Files\\Graphviz\\bin\\dot", "-Tpng", "Vectores/grafica_vector.dot", "-o", "Vectores/grafica.png").Output()
+	exec.Command("C:\\Program Files\\Graphviz\\bin\\dot", "-Tpdf", "Vectores/grafica_vector.dot", "-o", "Vectores/grafica.pdf").Output()
 
 }
 func BusquedaL(posicion_ int, vector VectorL) ListaTienda.ResL {
 
 	//fmt.Println("esto es:", vector.nodo[24].list.BuscarL())
 
-	return vector.nodo[24].list.BuscarL()
+	return vector.nodo[posicion_].list.BuscarL()
 }
 func BuscarT(departamento_ string, nombre_ string, calificacion_ int, vector VectorL) NodoT {
 	var aux NodoT

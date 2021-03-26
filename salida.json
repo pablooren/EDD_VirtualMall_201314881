@@ -1,0 +1,409 @@
+{
+    "Indice": [
+        {
+            "Letra": "A",
+            "Depto": [
+                {
+                    "Departamento": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": [{
+                            "Nombre": "Duarte Hermanos",
+                            "Descripcion": "Similique autem sint voluptas placeat aut ipsa eaque soluta optio.",
+                            "Contacto": "972-571-307",
+                            "Calificacion": 2
+                            }]
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Planes de servicio"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Belleza y Cuidado personal"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Calefaccion y Refrigeracion"
+                }
+            ]
+        },
+        {
+            "Letra": "B",
+            "Depto": [
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Planes de servicio"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Belleza y Cuidado personal"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Calefaccion y Refrigeracion"
+                }
+            ]
+        },
+        {
+            "Letra": "C",
+            "Depto": [
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Planes de servicio"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Belleza y Cuidado personal"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Calefaccion y Refrigeracion"
+                }
+            ]
+        },
+        {
+            "Letra": "D",
+            "Depto": [
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Planes de servicio"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Belleza y Cuidado personal"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Calefaccion y Refrigeracion"
+                }
+            ]
+        },
+        {
+            "Letra": "E",
+            "Depto": [
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Planes de servicio"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Belleza y Cuidado personal"
+                },
+                {
+                    "Clasi": [
+                        {
+                            "Clasi": 1,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 2,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 3,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 4,
+                            "Tiendas": {}
+                        },
+                        {
+                            "Clasi": 5,
+                            "Tiendas": {}
+                        }
+                    ],
+                    "Nombre": "Calefaccion y Refrigeracion"
+                }
+            ]
+        }
+    ]
+}
